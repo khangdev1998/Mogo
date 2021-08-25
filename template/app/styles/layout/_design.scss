@@ -1,0 +1,19 @@
+.design {
+  background: linear-gradient(rgba(#E6E6E6, 0.8)),
+    url("../images/img-device-bg.png") no-repeat center / cover;
+  margin-top: 7.2rem;
+  padding-top: 10.1rem;
+  background-attachment: fixed;
+  &-image {
+    margin-bottom: -9.3rem;
+    @include blockCenter(left, relative);
+}
+  @include maxWidth(767px) {
+    background-attachment: unset;
+    &-image {
+      max-width: 80%;
+      margin-bottom: -4.6rem;
+    }
+  }
+}
+

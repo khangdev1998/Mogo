@@ -1,0 +1,84 @@
+.people {
+  padding: 11rem 0;
+  background: linear-gradient(to bottom, rgba(white, 0.8)),
+    url("../images/img-people-bg.png") no-repeat center / cover;
+  &-list {
+    @include flexbox($wrap: wrap);
+    margin-bottom: -6rem;
+  }
+  &-list__items {
+    padding: 0 4rem;
+    width: 50%;
+    margin-bottom: 6rem;
+    @include flexbox;
+  }
+  &-list__avatar {
+    @include size(10rem);
+  }
+  &-content {
+    padding-left: 3rem;
+    line-height: 1.6;
+    height: 100%;
+    @include flexbox(space-between, column);
+  }
+  &-content__name {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: 600;
+    @include lineClamp();
+  }
+  &-content__italic {
+    word-break: break-all;
+    font-style: italic;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-weight: 300;
+    position: relative;
+    padding-bottom: 1.8rem;
+    margin: 0.4rem 0 1.9rem;
+    display: block;
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @include bgc($fourth-color);
+      @include size(6rem, 0.4rem);
+    }
+  }
+  &-content__description {
+    color: $text-color;
+    font-size: 1.5rem;
+    @include lineClamp(3);
+  }
+  @include maxWidth(1279px) {
+    &-list__avatar {
+      @include size(8rem);
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-list__items {
+      padding: 0 1rem;
+    }
+    &-content {
+      padding-left: 1rem;
+    }
+    &-content__description {
+      font-size: 1.4rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list__avatar {
+      @include size(6.5rem);
+    }
+    &-list__items {
+      width: 100%;
+      padding: 0;
+    }
+    &-content__italic {
+      padding-bottom: 1.2rem;
+      margin: 0rem 0 1rem;
+    }
+  }
+}

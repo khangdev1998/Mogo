@@ -1,0 +1,140 @@
+mixin listLink(text, href = "#")
+  li.header-top__items
+    a.header-top__link(href= href)= text
+
+mixin listIcon(iconClass, href = "#")
+  li.header-top__items
+    a.header-top__icon(href= href)
+      i(class= iconClass)
+
+mixin headerCenter(data, href= "#") 
+  h4.header-center__caption= data.caption
+  h1.header-center__title= data.title
+  a.header-center__more(href= data.href)= data.more
+
+mixin headerBottomActive(data) 
+  .header-bottom__items.active
+    span.header-bottom__number= data.number
+    span.header-bottom__text= data.text
+
+mixin headerBottom(data) 
+  .header-bottom__items
+    span.header-bottom__number= data.number
+    span.header-bottom__text= data.text
+
+mixin blockBox(data) 
+  .block-box
+    h4.block-box__caption= data.caption 
+    h1.block-box__title= data.title 
+    if data.desc 
+      p.block-box__description= data.desc
+
+mixin aboutItems(data) 
+  .about-list__items
+    img.about-list__image(src= data.src, alt= data.alt)
+    .about-list__content 
+      i.about-list__content-icon(class= data.icon)
+      span.about-list__content-text= data.title
+
+mixin numberItems(data) 
+  .number-list__items 
+    span.number-list__items-count= data.count
+    span.number-list__items-title= data.title
+
+mixin servicesItems(title, desc, src, alt) 
+  .services-list__items
+    img.services-list__image(src = src, alt= alt)
+    .services-list__content 
+      .services-list__title= title
+      .services-list__description= desc
+
+mixin wedoItems1(src, alt, title, iconClass, desc) 
+  .wedo-list__items 
+    .wedo-list__main
+      img.wedo-list__image(src= src, alt = alt)
+      h2.wedo-list__title= title
+      i.fas.fa-chevron-up.wedo-list__icon(class= iconClass)
+    .wedo-list__content
+      if desc
+        .wedo-list__desc= desc
+
+mixin wedoItems2(src, alt, title, iconClass) 
+  .wedo-list__items 
+    .wedo-list__main
+      img.wedo-list__image(src= src, alt = alt)
+      h2.wedo-list__title= title
+      i.wedo-list__icon(class= iconClass)
+
+mixin teamSocial(facebook= href="#", twitter= href="#", google= href="#", instagram= href="#", target= "__blank")
+  ul.team-content__social
+    li.team-content__items 
+      a.team-content__link(href= facebook, target= target)
+        i.team-content__icon.fab.fa-facebook-f
+    li.team-content__items 
+      a.team-content__link(href= twitter, target= target)
+        i.team-content__icon.fab.fa-twitter
+    li.team-content__items 
+      a.team-content__link(href= google, target= target)
+        i.team-content__icon.fab.fa-google
+    li.team-content__items 
+      a.team-content__link(href= instagram, target= target)
+        i.team-content__icon.fab.fa-instagram
+
+mixin teamItems(name, italic, src, alt) 
+  .team-list__items 
+    .team-list__main
+      img.team-list__image(src= src, alt= alt)
+      .team-content 
+        if block 
+          block 
+    .team-list__info
+      h2.team-list__name= name
+      span.team-list__italic= italic
+
+mixin worksColumn(src = src, full =  href, title = "Creatively designed", desc = "Lorem ipsum dolor sit", icon = "../images/img-wedo-icon1.png", alt1 = "works-image") 
+  .works-wrapper__items(class= full)
+    img.works-wrapper__image(src= src, alt= alt)
+    .works-content 
+      img.works-content__image(src= icon, alt= alt)
+      h4.works-content__title= title
+      p.works-content__desc= desc
+
+mixin peopleItems(src, alt, name, italic, desc)
+  .people-list__items 
+    img.people-list__avatar(src= src, alt= alt)
+    .people-content 
+      h2.people-content__name= name
+      span.people-content__italic= italic
+      p.people-content__description= desc
+
+mixin blogItems(src= "../images/img-blog1.png", number= "15", dateNumber= "Jan", title= "Lorem ipsum dolor sit amet", desc= "Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", view= "542", comment= "15") 
+  .blog-list__items 
+    image.blog-list__images(src= src alt= "blog-image")
+    .blog-list__calendar 
+      b.blog-list__number= number
+      i.blog-list__text= dateNumber
+    .blog-content 
+      h4.blog-content__title= title
+      p.blog-content__description= desc
+    .blog-statistics
+      .blog-statistics__items 
+        image.blog-statistics__images(src="../images/blog1.jpg")
+        span.blog-statistics__number= view
+      .blog-statistics__items 
+        image.blog-statistics__images(src="../images/blog2.jpg")
+        span.blog-statistics__number= comment
+
+mixin quote(src, desc, name, type = false)  
+  .quote-container
+    i.fas.fa-chevron-left.quote-icon
+    .quote-main
+      if type == false
+        img.quote-main__image(src= src, alt= "quote-image")
+      else 
+        .quote-image 
+          img(src= src)
+      .quote-content
+        .quote-content__desc= desc
+        span.quote-content__dash
+        span.quote-content__name= name
+    i.fas.fa-chevron-right.quote-icon

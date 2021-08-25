@@ -1,0 +1,11 @@
+body {
+  line-height: 1;
+  font-family: $primary-font;
+  color: $title-color-dark;
+  &::-webkit-scrollbar {
+    width: 1.2rem;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, $primary-color, $third-color);
+  }
+}

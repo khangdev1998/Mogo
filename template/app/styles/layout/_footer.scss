@@ -1,0 +1,219 @@
+.footer {
+  padding-top: 7.5rem;
+  &-list {
+    display: grid;
+    @include flexbox2((
+      justify-content: space-between
+    ))
+  };
+  &-column {
+    width: calc(25% - 25px);
+    &:first-child {
+      width: calc(40% - 25px);
+    }
+    &:nth-child(2) {
+      width: calc(35% - 25px);
+    }
+  }
+  &-column__title {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    margin-bottom: 3.4rem;
+    word-break: break-all;
+  }
+  &-column__logo {
+    text-decoration: none;
+    display: inline-block;
+    font-size: 4.6rem;
+    font-weight: bold;
+    color: $gray-secondary-color;
+    margin-bottom: 3.2rem;
+  }
+  &-column__description {
+    color: $text-color;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    padding-bottom: 3.8rem;
+    line-height: 1.5;
+    word-break: break-all;
+  }
+  &-column__number {
+    font-weight: bold;
+    font-size: 1.8rem;
+    margin-right: 5px;
+  }
+  &-column__text {
+    font-weight: 600;
+    font-size: 1.4rem;
+  }
+  &-social {
+    @include flexbox($align-items: baseline);
+    border-top: 1px solid $border-gray;
+    margin-top: 2rem;
+    padding: 2rem 0 3.5rem;
+  }
+  &-social__italic {
+    font-family: $secondary-font;
+    color: $text-color;
+    font-size: 1.5rem;
+    margin-right: 2.4rem;
+  }
+  &-social__link {
+    display: inline-block;
+    font-size: 1.8rem;
+    color: $third-color;
+  }
+  &-social__link + &-social__link {
+    margin-left: 1.9rem;
+  }
+  &-form {
+    max-width: 38rem;
+    height: 4.2rem;
+    @include bgc(white);
+    border: 1px solid $border-gray;
+    display: flex;
+  }
+  &-form__input {
+    padding: 1.5rem;
+    @include size(100%);
+    border: none;
+    outline: none;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+  }
+  &-form__input::placeholder {
+    color: #d9d9d9;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  &-form__btn {
+    @include bgc($third-color);
+    border: none;
+    outline: none;
+    color: $title-color-light;
+    font-family: $primary-font;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0.4rem 3.5rem;
+  }
+  &-articles {
+    @include flexbox($align-items: center);
+  }
+  &-articles:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+  &-articles__content {
+    padding-left: 2rem;
+    max-width: 212px;
+    line-height: 1.5;
+  }
+  &-articles__title {
+    font-family: $primary-font;
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin-bottom: 0.2rem;
+    text-transform: uppercase;
+    @include lineClamp(3);
+  }
+  &-articles__calendar {
+    font-family: $secondary-font;
+    font-size: 1.2rem;
+    color: $text-color;
+    word-break: break-all;
+  }
+  &-gallery {
+    @include flexbox(space-between, $wrap: wrap);
+    margin-bottom: -0.6rem;
+  }
+  &-gallery__items {
+    width: calc(33.3333% - 2.6667px);
+    margin-bottom: 0.6rem;
+  }
+  &-gallery__image {
+    @include size(100%, 9rem);
+    vertical-align: middle;
+    object-fit: cover;
+  }
+  &-gallery__more {
+    font-family: $secondary-font;
+    font-size: 1.2rem;
+    color: $title-color-dark;
+    padding-top: 1.4rem;
+    word-break: break-all;
+  }
+  @include maxWidth(1279px) {
+    &-gallery__image {
+      @include size(100%, 7.5rem);
+    }
+  }
+  @include maxWidth(1023px) {
+    padding-top: 4rem;
+    &-list {
+      display: block;
+      margin-bottom: -3.5rem;
+    }
+    &-column {
+      margin-bottom: 3.5rem;
+    }
+    &-column:not(:nth-child(9999)) {
+      width: 100%;
+    }
+    &-column__logo {
+      padding-bottom: 1.5rem;
+    }
+    &-column__description {
+      padding-bottom: 1.8rem;
+    }
+    &-column__title {
+      margin-bottom: 2rem;
+    }
+    &-social {
+      padding: 2rem 0 2rem;
+      margin-top: 1.4rem;
+    }
+    &-articles__content {
+      max-width: 100%;
+    }
+    &-gallery__image {
+      @include size(100%, 14rem);
+    }
+  }
+  @include maxWidth(767px) {
+    &-social__italic {
+      margin-right: 1rem;
+    }
+    &-social__link + &-social__link {
+      margin-left: 1.4rem;
+    }
+    &-gallery__image {
+      @include size(100%, 10rem);
+    }
+  }
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 6.8rem;
+  font-weight: 600;
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  &__container {
+    padding: 2.4rem 0;
+    border-top: 1px solid $border-gray;
+  }
+  &__dev {
+    color: $primary-color;
+    text-decoration: none;
+    padding-left: 0.6rem;
+  }
+  @include maxWidth(767px) {
+    &__dev {
+      display: block;
+      padding-top: 8px;
+    }
+  }
+}

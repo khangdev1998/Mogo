@@ -1,0 +1,50 @@
+.about {
+  text-align: center;
+  padding: 9rem 0 10rem;
+  &-list {
+    padding-top: 10rem;
+    @include flexbox($justify-content: space-between);
+  }
+  &-list__items {
+    width: calc(33.333% - 20px);
+  }
+  &-list__image {
+    @include size(100%);
+    vertical-align: middle;
+    object-fit: cover;
+  }
+  &-list__content {
+    color: $title-color-light;
+    padding: 1.4rem;
+  }
+  &-list__content-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.2rem;
+  }
+  &-list__content-text {
+  font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    display: block;
+    line-height: 1.4;
+    @include lineClamp(2);
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+    &-list {
+      padding-top: 5rem;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-list {
+      padding-top: 5rem;
+      @include scrollSnap();
+    }
+    &-list__items {
+      width: 100%;
+      margin-bottom: 2.5rem;
+    }
+  }
+}
+@include hoverEffect(".about-list__items", ".about-list__content");

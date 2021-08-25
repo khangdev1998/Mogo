@@ -1,0 +1,75 @@
+.wedo {
+  padding: 10.12rem 0;
+  &-wrapper {
+    padding-top: 8.8rem;
+    @include flexbox(space-between);
+    & > * {
+      width: calc(50% - 1.5rem);
+      object-fit: cover;
+    }
+  }
+  &-list__items {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+  &-list__main {
+    border: 1px solid $border-gray;
+    @include flexbox($align-items: center);
+    padding: 1.5rem;
+    cursor: pointer;
+  }
+  &-list__image {
+    padding-right: 1.5rem;
+  }
+  &-list__title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    word-break: break-all;
+    line-height: 1.5;
+    padding-right: 2.4rem;
+    @include lineClamp(2);
+  }
+  &-list__icon {
+    font-size: 2rem;
+    color: $gray-secondary-color;
+    margin-left: auto;
+  }
+  &-list__content {
+    padding: 2.5rem;
+    line-height: 1.6;
+    color: #b9b9b9;
+    border: 1px solid $border-gray;
+    border-top: 0;
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    font-style: italic;
+  }
+  &-list__desc {
+    height: 16.5rem; 
+    overflow-y: auto;
+    padding-right: 2.5rem;
+    &::-webkit-scrollbar {
+      width: 0.6rem;
+    }
+    &::-webkit-scrollbar-track {
+      @include bgc($gray-third-color);
+      border-radius: 10px;
+    }
+    &::-webkit-scrollbar-thumb {
+      @include bgc($third-color);
+      border-radius: 10px;
+    }
+  }
+  @include maxWidth(767px) {
+    padding-top: 6.5rem;
+    &-wrapper {
+      display: block;
+      padding-top: 4rem;
+      & > * {
+        width: 100%;
+      }
+    }
+  }
+}

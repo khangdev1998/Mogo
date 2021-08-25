@@ -1,0 +1,41 @@
+header.header 
+  .container 
+    .header-top 
+      a.header-top__logo(href="") MoGo
+      <i class="fas fa-bars header-top__bars"></i>
+      ul.header-top__list
+        +listLink("About")
+        +listLink("Service")
+        +listLink("Work")
+        +listLink("Blog")
+        +listLink("Contact")
+        +listIcon("fas fa-shopping-cart")
+        +listIcon("fas fa-search")
+    .header-center 
+      +headerCenter({
+        caption: "Creative Template",
+        title: "Welcome to MoGo",
+        more: "Learn more",
+        href: "#"
+      })
+    .header-bottom 
+      +headerBottomActive({
+        number: "01",
+        text: "Intro"
+      })
+      +headerBottom({
+        number: "02",
+        text: "About"
+      })
+      +headerBottom({
+        number: "03",
+        text: "Work"
+      })
+      +headerBottom({
+        number: "04",
+        text: "Contacts"
+      })
+
+    
+
+

@@ -1,0 +1,16 @@
+section.blog 
+  .container 
+    +blockBox({
+    caption: "Our stories",
+    title: "Latest blog"
+  })
+    .blog-list 
+      +blogItems()
+      +blogItems("../images/img-blog2.png", "14", "Jan", "sed do eiusmod tempor", "Adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "992", "42")
+      +blogItems("../images/img-blog3.png", "12", "Jan", "incididunt ut labore et dolore", "Elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "1560", "98")
+
+section.map
+  .container 
+    .map-container
+      img.map__image(src= "../images/img-map-icon.png" alt= "map-image")
+      h1.map__title Open map

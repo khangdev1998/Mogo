@@ -1,0 +1,75 @@
+.quote {
+  @include bgc($gray-color);
+  padding: 7rem 0;
+  &-container {
+    @include flexbox(space-between, row, center);
+  }
+  &-icon {
+    color: $gray-secondary-color;
+    font-size: 2.2rem;
+    cursor: pointer;
+  }
+  &-main {
+    @include flexbox(space-between, row, center);
+    padding: 0 7.5rem;
+  }
+  &-main__image {
+    margin-right: 6rem;
+    border: 5px solid $border-green;
+    padding: 4rem;
+  }
+  &-content__desc {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    color: $text-color;
+    font-style: italic;
+    font-family: $secondary-font;
+    margin-bottom: 1.9rem;
+    font-weight: 300;
+    @include lineClamp(4);
+
+  }
+  &-content__dash {
+    @include size(6.2rem, 0.5rem);
+    @include bgc($fourth-color);
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    margin-right: 1rem;
+  }
+  &-content__name {
+    font-family: $third-font;
+    font-size: 2.4rem;
+    word-break: break-all;
+    line-height: 1.4;
+  }
+  @include maxWidth(1023px) {
+    padding: 4rem 0;
+    &-icon {
+      display: none;
+    }
+    &-main {
+      padding: 0 4.5rem;
+    }
+    &-main__image {
+      margin-right: 4rem;
+      padding: 2rem;
+    }
+    &-content__desc {
+      font-size: 1.8rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-main {
+      display: block;
+      text-align: center;
+      padding: initial;
+    }
+    &-main__image {
+      margin: 0 0 1.8rem;
+    }
+    &-content__desc {
+      font-size: 1.6rem;
+    }
+  }
+}

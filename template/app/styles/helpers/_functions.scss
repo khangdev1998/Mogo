@@ -1,0 +1,5 @@
+// https://kittygiraudel.com/2014/05/05/bringing-configuration-objects-to-sass/
+
+@function extend($obj, $ext-obj) {
+  @return map-merge($obj, $ext-obj);
+}

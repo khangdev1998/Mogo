@@ -1,0 +1,22 @@
+section.works
+  .container 
+    +blockBox({
+    caption: "What we do",
+    title: "Some of our work",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minimveniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+  })
+  .works-wrapper
+    .works-wrapper__column
+      +worksColumn("../images/img-work1.png")
+      +worksColumn("../images/img-work2.png")
+
+    .works-wrapper__column 
+      +worksColumn("../images/img-work3.png")
+      +worksColumn("../images/img-work4.png")
+
+    .works-wrapper__column
+      +worksColumn("../images/img-work5.png", "items--full")
+
+    .works-wrapper__column 
+      +worksColumn("../images/img-work6.png")
+      +worksColumn("../images/img-work7.png")

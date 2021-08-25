@@ -1,0 +1,45 @@
+.services {
+  padding-top: 10.1rem;
+  &-list {
+    @include flexbox(space-between, $wrap: wrap);
+    &:first-child {
+      border-bottom: 1px solid $border-gray;
+    }
+  }
+  &-list__items {
+    width: calc(33.33% - 2.7rem);
+    @include flexbox($align-items: start);
+    padding: 5rem 0;
+  }
+  &-list__image {
+    margin: 0 3rem;
+  }
+  &-list__content {
+    line-height: 1.5;
+    word-break: break-all;
+    height: 100%;
+    @include flexbox(space-between, column);
+  }
+  &-list__title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+    @include lineClamp(2);
+  }
+  &-list__description {
+    font-size: 1.5rem;
+    font-family: $secondary-font;
+    color: $text-color;
+  }
+  @include maxWidth(1023px) {
+    padding-top: 6rem;
+    &-list__items {
+      width: 100%;
+      padding: 2.4rem 0;
+    }
+    &-list__image {
+      margin: 0 2.2rem;
+    }
+  }
+}
